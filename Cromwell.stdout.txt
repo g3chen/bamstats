@@ -1,0 +1,105 @@
+	[2020-05-28 19:01:00,43] [info] Running with database db.url = jdbc:hsqldb:mem:44d65c84-2852-4fb1-a18b-4516729411a2;shutdown=false;hsqldb.tx=mvcc
+	[2020-05-28 19:01:10,51] [info] Running migration RenameWorkflowOptionsInMetadata with a read batch size of 100000 and a write batch size of 100000
+	[2020-05-28 19:01:10,53] [info] [RenameWorkflowOptionsInMetadata] 100%
+	[2020-05-28 19:01:10,72] [info] Running with database db.url = jdbc:hsqldb:mem:1a82d25c-382d-46ac-a841-685f79a2f2c1;shutdown=false;hsqldb.tx=mvcc
+	[2020-05-28 19:01:11,23] [info] Slf4jLogger started
+	[2020-05-28 19:01:11,59] [info] Workflow heartbeat configuration:
+	{
+	  "cromwellId" : "cromid-fd96116",
+	  "heartbeatInterval" : "2 minutes",
+	  "ttl" : "10 minutes",
+	  "failureShutdownDuration" : "5 minutes",
+	  "writeBatchSize" : 10000,
+	  "writeThreshold" : 10000
+	}
+	[2020-05-28 19:01:11,84] [info] KvWriteActor configured to flush with batch size 200 and process rate 5 seconds.
+	[2020-05-28 19:01:11,87] [[38;5;220mwarn[0m] 'docker.hash-lookup.gcr-api-queries-per-100-seconds' is being deprecated, use 'docker.hash-lookup.gcr.throttle' instead (see reference.conf)
+	[2020-05-28 19:01:11,90] [info] CallCacheWriteActor configured to flush with batch size 100 and process rate 3 seconds.
+	[2020-05-28 19:01:11,90] [info] Metadata summary refreshing every 1 second.
+	[2020-05-28 19:01:11,91] [info] WriteMetadataActor configured to flush with batch size 200 and process rate 5 seconds.
+	[2020-05-28 19:01:12,03] [info] JobExecutionTokenDispenser - Distribution rate: 50 per 1 seconds.
+	[2020-05-28 19:01:12,15] [info] SingleWorkflowRunnerActor: Version 44
+	[2020-05-28 19:01:12,17] [info] SingleWorkflowRunnerActor: Submitting workflow
+	[2020-05-28 19:01:12,25] [info] Unspecified type (Unspecified version) workflow d83c3bab-da56-4b40-a5fa-7c09c51e2425 submitted
+	[2020-05-28 19:01:12,28] [info] SingleWorkflowRunnerActor: Workflow submitted [38;5;2md83c3bab-da56-4b40-a5fa-7c09c51e2425[0m
+	[2020-05-28 19:01:12,30] [info] 1 new workflows fetched by cromid-fd96116: d83c3bab-da56-4b40-a5fa-7c09c51e2425
+	[2020-05-28 19:01:12,32] [info] WorkflowManagerActor Starting workflow [38;5;2md83c3bab-da56-4b40-a5fa-7c09c51e2425[0m
+	[2020-05-28 19:01:12,33] [info] WorkflowManagerActor Successfully started WorkflowActor-d83c3bab-da56-4b40-a5fa-7c09c51e2425
+	[2020-05-28 19:01:12,33] [info] Retrieved 1 workflows from the WorkflowStoreActor
+	[2020-05-28 19:01:12,36] [info] WorkflowStoreHeartbeatWriteActor configured to flush with batch size 10000 and process rate 2 minutes.
+	[2020-05-28 19:01:12,59] [info] MaterializeWorkflowDescriptorActor [[38;5;2md83c3bab[0m]: Parsing workflow as WDL draft-2
+	[2020-05-28 19:01:13,87] [info] MaterializeWorkflowDescriptorActor [[38;5;2md83c3bab[0m]: Call-to-Backend assignments: bamstatsWorkflow.bamstats -> Local
+	[2020-05-28 19:01:14,08] [[38;5;220mwarn[0m] Local [[38;5;2md83c3bab[0m]: Key/s [memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+	[2020-05-28 19:01:15,30] [info] WorkflowExecutionActor-d83c3bab-da56-4b40-a5fa-7c09c51e2425 [[38;5;2md83c3bab[0m]: Starting bamstatsWorkflow.bamstats
+	[2020-05-28 19:01:16,06] [info] Assigned new job execution tokens to the following groups: d83c3bab: 1
+	[2020-05-28 19:01:17,05] [info] Not triggering log of token queue status. Effective log interval = None
+	[2020-05-28 19:01:17,59] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2md83c3bab[0mbamstatsWorkflow.bamstats:NA:1]: Unrecognized runtime attribute keys: memory
+	[2020-05-28 19:01:17,69] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2md83c3bab[0mbamstatsWorkflow.bamstats:NA:1]: [38;5;5mbash /usr/local/bin/bamstats "4" "/cromwell-executions/bamstatsWorkflow/d83c3bab-da56-4b40-a5fa-7c09c51e2425/call-bamstats/inputs/-388291477/rna.SRR948778.bam"[0m
+	[2020-05-28 19:01:17,73] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2md83c3bab[0mbamstatsWorkflow.bamstats:NA:1]: executing: # make sure there is no preexisting Docker CID file
+	rm -f /tmp/1590692457721-0/cromwell-executions/bamstatsWorkflow/d83c3bab-da56-4b40-a5fa-7c09c51e2425/call-bamstats/execution/docker_cid
+	# run as in the original configuration without --rm flag (will remove later)
+	docker run \
+	  --cidfile /tmp/1590692457721-0/cromwell-executions/bamstatsWorkflow/d83c3bab-da56-4b40-a5fa-7c09c51e2425/call-bamstats/execution/docker_cid \
+	  -i \
+	   \
+	  --entrypoint /bin/bash \
+	  -v /tmp/1590692457721-0/cromwell-executions/bamstatsWorkflow/d83c3bab-da56-4b40-a5fa-7c09c51e2425/call-bamstats:/cromwell-executions/bamstatsWorkflow/d83c3bab-da56-4b40-a5fa-7c09c51e2425/call-bamstats:delegated \
+	  g3chen/new_account_bamstats@sha256:29608b63250c8af00dd49484efed8ba79f0654de52e85d5ab13493a7f8357986 /cromwell-executions/bamstatsWorkflow/d83c3bab-da56-4b40-a5fa-7c09c51e2425/call-bamstats/execution/script
+	
+	# get the return code (working even if the container was detached)
+	rc=$(docker wait [38;5;5mcat /tmp/1590692457721-0/cromwell-executions/bamstatsWorkflow/d83c3bab-da56-4b40-a5fa-7c09c51e2425/call-bamstats/execution/docker_cid[0m)
+	
+	# remove the container after waiting
+	docker rm [38;5;5mcat /tmp/1590692457721-0/cromwell-executions/bamstatsWorkflow/d83c3bab-da56-4b40-a5fa-7c09c51e2425/call-bamstats/execution/docker_cid[0m
+	
+	# return exit code
+	exit $rc
+	[2020-05-28 19:01:21,88] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2md83c3bab[0mbamstatsWorkflow.bamstats:NA:1]: job id: 15522
+	[2020-05-28 19:01:21,89] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2md83c3bab[0mbamstatsWorkflow.bamstats:NA:1]: Status change from - to WaitingForReturnCode
+	[2020-05-28 19:04:21,41] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2md83c3bab[0mbamstatsWorkflow.bamstats:NA:1]: Status change from WaitingForReturnCode to Done
+	[2020-05-28 19:04:23,25] [info] WorkflowExecutionActor-d83c3bab-da56-4b40-a5fa-7c09c51e2425 [[38;5;2md83c3bab[0m]: Workflow bamstatsWorkflow complete. Final Outputs:
+	{
+	  "bamstatsWorkflow.bamstats.bamstats_report": "/tmp/1590692457721-0/cromwell-executions/bamstatsWorkflow/d83c3bab-da56-4b40-a5fa-7c09c51e2425/call-bamstats/execution/bamstats_report.zip"
+	}
+	[2020-05-28 19:04:23,29] [info] WorkflowManagerActor WorkflowActor-d83c3bab-da56-4b40-a5fa-7c09c51e2425 is in a terminal state: WorkflowSucceededState
+	[2020-05-28 19:04:33,14] [info] SingleWorkflowRunnerActor workflow finished with status 'Succeeded'.
+	{
+	  "outputs": {
+	    "bamstatsWorkflow.bamstats.bamstats_report": "/tmp/1590692457721-0/cromwell-executions/bamstatsWorkflow/d83c3bab-da56-4b40-a5fa-7c09c51e2425/call-bamstats/execution/bamstats_report.zip"
+	  },
+	  "id": "d83c3bab-da56-4b40-a5fa-7c09c51e2425"
+	}
+	[2020-05-28 19:04:36,98] [info] Workflow polling stopped
+	[2020-05-28 19:04:36,99] [info] Shutting down WorkflowStoreActor - Timeout = 5 seconds
+	[2020-05-28 19:04:37,00] [info] Shutting down WorkflowLogCopyRouter - Timeout = 5 seconds
+	[2020-05-28 19:04:37,01] [info] Shutting down JobExecutionTokenDispenser - Timeout = 5 seconds
+	[2020-05-28 19:04:37,01] [info] 0 workflows released by cromid-fd96116
+	[2020-05-28 19:04:37,02] [info] Aborting all running workflows.
+	[2020-05-28 19:04:37,02] [info] JobExecutionTokenDispenser stopped
+	[2020-05-28 19:04:37,02] [info] WorkflowStoreActor stopped
+	[2020-05-28 19:04:37,02] [info] WorkflowLogCopyRouter stopped
+	[2020-05-28 19:04:37,02] [info] Shutting down WorkflowManagerActor - Timeout = 3600 seconds
+	[2020-05-28 19:04:37,02] [info] WorkflowManagerActor All workflows finished
+	[2020-05-28 19:04:37,02] [info] WorkflowManagerActor stopped
+	[2020-05-28 19:04:37,33] [info] Connection pools shut down
+	[2020-05-28 19:04:37,34] [info] Shutting down SubWorkflowStoreActor - Timeout = 1800 seconds
+	[2020-05-28 19:04:37,34] [info] Shutting down JobStoreActor - Timeout = 1800 seconds
+	[2020-05-28 19:04:37,34] [info] Shutting down CallCacheWriteActor - Timeout = 1800 seconds
+	[2020-05-28 19:04:37,34] [info] Shutting down ServiceRegistryActor - Timeout = 1800 seconds
+	[2020-05-28 19:04:37,34] [info] Shutting down DockerHashActor - Timeout = 1800 seconds
+	[2020-05-28 19:04:37,34] [info] CallCacheWriteActor Shutting down: 0 queued messages to process
+	[2020-05-28 19:04:37,34] [info] SubWorkflowStoreActor stopped
+	[2020-05-28 19:04:37,34] [info] CallCacheWriteActor stopped
+	[2020-05-28 19:04:37,34] [info] Shutting down IoProxy - Timeout = 1800 seconds
+	[2020-05-28 19:04:37,34] [info] IoProxy stopped
+	[2020-05-28 19:04:37,35] [info] JobStoreActor stopped
+	[2020-05-28 19:04:37,36] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+	[2020-05-28 19:04:37,36] [info] WriteMetadataActor Shutting down: 0 queued messages to process
+	[2020-05-28 19:04:37,36] [info] KvWriteActor Shutting down: 0 queued messages to process
+	[2020-05-28 19:04:37,36] [info] DockerHashActor stopped
+	[2020-05-28 19:04:37,37] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+	[2020-05-28 19:04:37,36] [info] Shutting down connection pool: curAllocated=1 idleQueues.size=1 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+	[2020-05-28 19:04:37,37] [info] ServiceRegistryActor stopped
+	[2020-05-28 19:04:37,40] [info] Database closed
+	[2020-05-28 19:04:37,40] [info] Stream materializer shut down
+	[2020-05-28 19:04:37,40] [info] WDL HTTP import resolver closed
